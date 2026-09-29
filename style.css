@@ -78,4 +78,20 @@ h1 {
     align-items: flex-end;
     padding: 40px;
 }
+
+@media (max-width: 760px) { 
+    h1 {
+        font-size: 32px;
+        }
+
+    .banner-principal {
+        min-height: 250px;
+        padding: 20px;
+        }
+
+    .grid-filmes {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+        gap: 15px;
+        } 
+    }
  
