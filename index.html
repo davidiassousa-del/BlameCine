@@ -9,7 +9,7 @@
 <body>
     <nav>
         <h1>BlameCine</h1>
-        <h3>Sobre</h3>
+        <a href="sobre.html"><h3>Sobre</h3></a>
     </nav>
     <div class="grid-global">
 
@@ -32,5 +32,21 @@
         </main>
 
     </div>
+
+    <button id="abrir-formulario" type="button">+</button>
+
+    <form id="form-filme" hidden>
+        <p>
+            <label for="titulo">Título:</label>
+            <input id="titulo" name="titulo" required>
+        </p>
+        <p>
+            <label for="capa">URL da capa:</label>
+            <input id="capa" name="capa" type="url" required>
+        </p>
+        <button type="submit">Adicionar filme</button>
+    </form>
+
+    <script src="app.js"></script>
 </body>
 </html>
