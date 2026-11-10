@@ -1,3 +1,4 @@
+/* ================= REGRAS ANTIGAS DO SEU SITE ================= */
 *{
     margin: 0;
     padding: 0;
@@ -23,13 +24,18 @@ nav {
     height: 80px;
     position: sticky;
     top: 0;
-    border-radius: 20px;
+    border-radius: 0px 0px 20px 20px;
     display: flex;
-    align-items: center;
-    
     padding-left: 30px;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
 }
-
+.botaoabrir{
+    left: 95%;
+    position: absolute;
+    display: flex;
+}
 h1 {
     color: white;
     font-size: 50px;
@@ -42,34 +48,32 @@ h1 {
     width: 100%;
 }
 
-
 .card-filme img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s pulse;
     cursor: pointer;
 }
 
 .card-filme img:hover {
     animation-name: crescer;
     animation-duration: 2s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
 
 @keyframes crescer{
-    0%{transform: scale(1.3)}
-    20%{transform: scale(1.5)}
-    50%{transform: scale(1.8)}
- }
+    0%{transform: scale(1)}
+    20%{transform: scale(1.1)}
+    50%{transform: scale(1.2)}
+}
 
 .banner-principal {
     color: white;
     width: 100%;
     height: 100%;
     border-radius: 20px;
-
     background-image: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3)), 
                       url('https://thumb.wikimedia.org/wikipedia/pt/thumb/3/3a/Interstellar_Filme.png/250px-Interstellar_Filme.png?utm_source=pt.wikipedia.org&utm_campaign=parser&utm_content=thumbnail');
     background-size: cover;
@@ -80,21 +84,94 @@ h1 {
 }
 
 @media (max-width: 760px) { 
-    h1 {
-        font-size: 32px;
-        }
-
-    .banner-principal {
-        min-height: 250px;
-        padding: 20px;
-        }
-
-    .grid-filmes {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
-        gap: 15px;
-        } 
+    h1 { font-size: 32px; }
+    .banner-principal { min-height: 250px; padding: 20px; }
+    .grid-filmes { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 15px; } 
 }
 
 h3{
     color: white;
+    position: absolute;
+    left: 85%;
+    top: 30px;
+}
+
+#abrir-formulario{
+    background-color: white;
+    color: black;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+
+/* ================= REGRAS NOVAS DO FORMULÁRIO ================= */
+#form-filme {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(24, 24, 24);
+    border: 2px solid rgb(130, 9, 9);
+    border-radius: 15px;
+    padding: 30px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#form-filme[hidden] {
+    display: none !important;
+}
+
+#form-filme p {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#form-filme label {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+#form-filme input {
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 12px;
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+#form-filme input:focus {
+    border-color: rgb(130, 9, 9);
+}
+
+#form-filme button[type="submit"] {
+    background-color: rgb(130, 9, 9);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 10px;
+}
+
+#form-filme button[type="submit"]:hover {
+    background-color: rgb(170, 15, 15);
+}
+
+#form-filme button[type="submit"]:active {
+    transform: scale(0.98);
 }
